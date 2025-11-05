@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <!-- ✅ Basic Setup -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Feane Restaurant</title>
+
+  <!-- ✅ Favicon -->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/png">
+
+  <!-- ✅ Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+  <!-- ✅ Extra Styles (from CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+
+  <!-- ✅ Font Awesome Icons -->
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+  <!-- ✅ Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body {% block class %}{% endblock class %}>
+  <!-- ✅ Hero Section Background -->
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="{% static 'images/hero-bg.jpg' %}" alt="Background Image">
+    </div>
+
+    <!-- ✅ Navbar / Header -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          
+          <!-- 🏠 Website Logo -->
+          <a class="navbar-brand" href="{% url 'Home' %}">
+            <span>Feane</span>
+          </a>
+
+          <!-- ☰ Mobile Menu Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span></span>
+          </button>
+
+          <!-- 🔗 Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item {% block home_status %}{% endblock home_status %}">
+                <a class="nav-link" href="{% url 'Home' %}">Home</a>
+              </li>
+              <li class="nav-item {% block menu_status %}{% endblock menu_status %}">
+                <a class="nav-link" href="{% url 'Menu' %}">Menu</a>
+              </li>
+              <li class="nav-item {% block about_status %}{% endblock about_status %}">
+                <a class="nav-link" href="{% url 'About' %}">About</a>
+              </li>
+              <li class="nav-item {% block table_status %}{% endblock table_status %}">
+                <a class="nav-link" href="{% url 'Book_Table' %}">Book Table</a>
+              </li>
+              <li class="nav-item {% block feedback_status %}{% endblock feedback_status %}">
+                <a class="nav-link" href="{% url 'Feedback_Form' %}">Feedback</a>
+              </li>
+            </ul>
+
+            <!-- 🔐 Admin Login Button -->
+            <div class="user_option">
+              <a href="/admin" class="order_online">Admin Login</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ✅ Slider Section (changes page by page) -->
+    {% block slider %}{% endblock slider %}
+  </div>
+
+  <!-- ✅ Main Content (changes in every page) -->
+  {% block main %}{% endblock main %}
+
+  <!-- ✅ Footer Section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <!-- 📞 Contact Info -->
+        <div class="col-md-4 footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact_link_box">
+            <a href="#"><i class="fa fa-map-marker"></i> Location</a>
+            <a href="#"><i class="fa fa-phone"></i> +91 1234567890</a>
+            <a href="#"><i class="fa fa-envelope"></i> demo@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- 💬 About -->
+        <div class="col-md-4 footer-col">
+          <h4>About Feane</h4>
+          <p>Enjoy delicious food made with love and fresh ingredients.</p>
+          <div class="footer_social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- 🕙 Opening Hours -->
+        <div class="col-md-4 footer-col">
+          <h4>Opening Hours</h4>
+          <p>Everyday: 10:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+
+      <!-- 💡 Footer Bottom Info -->
+      <div class="footer-info text-center">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved | Feane Restaurant
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ✅ JavaScript Files -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

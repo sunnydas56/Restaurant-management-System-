@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Category Filters */
+.filters_menu {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.filters_menu li {
+  background: #eee;
+  color: #444;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters_menu li:hover,
+.filters_menu li.active {
+  background-color: #ff6347;
+  color: white;
+}
+
+/* Menu Card */
+.menu-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Box */
+.menu-card .img-box {
+  height: 200px;
+  overflow: hidden;
+}
+
+.menu-card .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Details Box */
+.menu-card .detail-box {
+  padding: 15px;
+  text-align: left;
+}
+
+.menu-card .detail-box h5 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.menu-card .detail-box p {
+  font-size: 0.9rem;
+  color: #666;
+  min-height: 45px;
+}
+
+/* Price Row */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ff6347;
+}
+
+.add-btn {
+  background: #ff6347;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #e5533d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filters_menu {
+    gap: 0.5rem;
+  }
+
+  .filters_menu li {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
